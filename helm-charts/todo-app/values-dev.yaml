@@ -1,0 +1,21 @@
+# Development environment values
+replicaCount: 1
+
+image:
+  repository: 098347674973.dkr.ecr.ap-south-1.amazonaws.com/todo-app
+  tag: "dev"
+
+service:
+  type: ClusterIP
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+env:
+  - name: NODE_ENV
+    value: "development"

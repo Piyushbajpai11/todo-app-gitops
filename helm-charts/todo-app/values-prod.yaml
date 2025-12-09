@@ -1,0 +1,27 @@
+# Production environment values
+replicaCount: 3
+
+image:
+  repository: 098347674973.dkr.ecr.ap-south-1.amazonaws.com/todo-app
+  tag: "prod"
+
+service:
+  type: LoadBalancer
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+
+env:
+  - name: NODE_ENV
+    value: "production"

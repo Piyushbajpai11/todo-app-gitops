@@ -1,0 +1,34 @@
+# Default values for todo-app
+replicaCount: 2
+
+image:
+  repository: 098347674973.dkr.ecr.ap-south-1.amazonaws.com/todo-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+  port: 3000
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+env:
+  - name: NODE_ENV
+    value: "production"

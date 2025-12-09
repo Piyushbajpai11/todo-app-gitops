@@ -1,0 +1,21 @@
+# Staging environment values
+replicaCount: 2
+
+image:
+  repository: 098347674973.dkr.ecr.ap-south-1.amazonaws.com/todo-app
+  tag: "staging"
+
+service:
+  type: LoadBalancer
+
+resources:
+  limits:
+    cpu: 150m
+    memory: 192Mi
+  requests:
+    cpu: 75m
+    memory: 96Mi
+
+env:
+  - name: NODE_ENV
+    value: "staging"
