@@ -38,6 +38,7 @@ text
 
 ## 🏗️ Repository Structure
 
+```bash
 .
 ├── helm-charts/
 │ └── todo-app/
@@ -55,6 +56,7 @@ text
 │ ├── todo-app-staging.yaml
 │ └── todo-app-prod.yaml
 └── README.md
+```
 
 text
 
