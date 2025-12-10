@@ -33,6 +33,7 @@ Common labels
 */}}
 {{- define "todo-app.labels" -}}
 helm.sh/chart: {{ include "todo-app.chart" . }}
+{{ include "todo-app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -43,3 +44,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "todo-app.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "todo-app.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
