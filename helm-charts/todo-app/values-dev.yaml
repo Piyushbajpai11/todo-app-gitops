@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 098347674973.dkr.ecr.ap-south-1.amazonaws.com/todo-app
-  tag: "8c8ecbc"
+  tag: "1d66599"
 
 service:
   type: ClusterIP
